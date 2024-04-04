@@ -60,7 +60,7 @@ def process_events():
         logging.info(f"Event consumed: {event}")
 
         # Check if a time window has passed and store aggregated data
-        if time.time() - start_time >= 300:  # after 5 minutes
+        if time.time() - start_time >= 120:  # after 2 minutes
             store_aggregated_data(aggregated_data)
             aggregated_data = {}
             start_time = time.time()

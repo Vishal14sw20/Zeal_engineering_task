@@ -31,7 +31,9 @@ This repository contains a setup for a Kafka-Postgres data pipeline, comprising 
 
 4. **Once the services are up and running, you can access Grafana at** `http://localhost:3000` **in your web browser. Login with default credentials** (admin/admin).
 
-5. **finally, you will see dashboard inside dashboard tab**
+5. **Go to Dashboards, then Services folder. you will see `Actions by User` dashboard**.
+> Note: Data in the table is updated every 2 minutes, so changes will reflect on the dashboard within this timeframe.
+
 
 
 ## Overview
@@ -41,11 +43,16 @@ This repository contains a setup for a Kafka-Postgres data pipeline, comprising 
   - Data source and dashboard configurations are provided in the `grafana-provisioning` directory.
   - Grafana service will mount this directory to the container.
 
-# Data Handling
+## Data Handling
 - **Data Generation:** Data is randomly generated to simulate user interactions, creating event_id, user_id, and action type [logout, login, purchase].
 - **Consumer Storage:** The consumer stores the count of different actions performed by each user and the latest time of their action.
 - **Grafana Visualization:** Grafana displays the sum of actions performed by each user.
 
+
+## Assumptions
+Some requirements were not clear to me. So, I made my assumptions.
+Such as how to store data in Postgres, How to aggregate data. what data needs to be visualized.
+If you have any specific requirements then we can discuss it in further round (if you liked my solution). 
 
 ## In Real-World Scenario
 This solution serves as a simplified demonstration of a Kafka-Postgres data pipeline with Grafana visualization. In real-world scenarios, several enhancements and modifications would likely be implemented:
