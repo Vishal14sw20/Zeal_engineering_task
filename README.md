@@ -63,5 +63,6 @@ This solution serves as a simplified demonstration of a Kafka-Postgres data pipe
 
 - **Automated Testing and CI/CD:** Implementing automated testing practices and CI/CD pipelines.
 - **Credentials:** Saved in Vault for security.
+- **Logs and visualization** In grafana, adding logs for different container and better visualizing of data.
 - **etc**
 
